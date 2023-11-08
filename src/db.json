@@ -1,0 +1,12 @@
+{
+  "products": [
+    {
+      "image": "https://images.careerbuilder.vn/content/images/vat-va-nghe-chup-anh-thoi-trang-careerbuilder.jpg",
+      "name": "á",
+      "price": "33",
+      "category": "2sa",
+      "description": "áds",
+      "id": 3
+    }
+  ]
+}
