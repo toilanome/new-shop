@@ -1,9 +1,12 @@
 import React, { createContext, useEffect, useState } from 'react'
+import all_product from '../components/Assets/all_product'
+
 import { IProduct } from '../interface/Product'
 import { toast } from 'react-toastify'
 // import { redirect, useNavigate } from 'react-router-dom'
 
 // const navigate = useNavigate()
+
 export const ShopcontextMain = createContext({} as any)
 
 const ShopContextProvider = ({ children }: { children: React.ReactNode }) => {

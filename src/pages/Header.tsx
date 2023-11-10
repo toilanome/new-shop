@@ -1,32 +1,33 @@
 import React from 'react'
-
+import {FaSistrix} from 'react-icons/fa6'
+import Group from '../Images/Group.svg'
 const Header = () => {
     return (
-        <header >
-            <div className='h-11 bg-black flex justify-around items-center text-white'>
-                <span>USD</span>
-                <span>FREE SHIPPING ON ALL HERMAN MILLER! FEB. 25–28.</span>
-                <span>Support</span>
-            </div>
+        <header className='bg-color' >
+            
+            <div className='container padding'>
+            
             <div className='h-11 bg-color flex items-center text-black justify-between'>
-                <div className='ml-40'>
+                <h3 className='text-3xl'>Rivo</h3>
+                <div className=''   >
                     <ul className='flex '>
-                        <li className='mr-3'>Home</li>
-                        <li className='mr-3'>Products</li>
-                        <li className='mr-3'>Contacts</li>
-                        <li className='mr-3'>About</li>
-                        <div>
-                            <input type="text" placeholder='Search' />
-
-                        </div>
+                         <li className='mr-9 text-color '>Home</li>
+                        <li className='mr-9 text-color'>Products</li>
+                        <li className='mr-9 text-color'>Contacts</li>
+                        <li className='mr-9 text-color'>About</li>
+                        
                     </ul>
                 </div>
 
-                <div>
-                    <span>Login</span>
+                <div className='flex items-center'>
+                    
+                   <img src={Group} alt="" />
+                    <button className='btn-login text-color center'>Login</button>
                 </div>
 
             </div>
+            </div>
+           
 
         </header>
     )
