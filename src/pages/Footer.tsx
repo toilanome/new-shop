@@ -8,70 +8,30 @@ import Twitter from '../Images/Twitter.svg'
 import instar from '../Images/Instagram.svg'
 import fb from '../Images/Facebook.svg'
 
-const Footer = () => {
-  return (
-    <>
-    <footer className=' footer '>
-    <div className=' footer-content container'>
-    <div className="footer-logo ">
-        {/* <img src={footer_logo} alt="" /> */}
-        <p className=' '>RIVO </p>
-        <div className='mt-4 mb-6'>
-        <span className='text-white'> Social Media</span>
+const Footerne = () => {
+    return (
+        <>
+            <footer className=' footer ' style={{ marginTop: "100px" }}>
+                <div className='container'>
+                    <div className='mb-8'>
+                        <ul className='flex justify-center '>
+                            <li className='ml-6 mr-6'>ABOUT</li>
+                            <li className='ml-6 mr-6'>VALUES</li>
+                            <li className='ml-6 mr-6'>CONTACT</li>
+                            <li className='ml-6 mr-6'>FACEBOOK</li>
+                            <li className='ml-6 mr-6'  >INSTAGRAM</li>
+                        </ul>
+                    </div>
+                    <hr />
+                    <div className='flex justify-center mt-5 mb-8'>
+                        <span>© 2020 all rights reserved.</span>
+                    </div>
+                </div>
+            </footer>
+        </>
 
-        </div>
 
-        <div className="footer-social">
-        <div className="footer-icons-container transparent">
-            <img  src={instar} alt="" />
-        </div>
-        <div className="footer-icons-container">
-            <img src={Twitter} alt="" />
-        </div>
-        <div className="footer-icons-container">
-            <img src={fb} alt="" />
-        </div>
-    </div>
-    </div>
-    <div className="shop text-white mt-5">
-        <ul>
-            <li className='text-xl font-bold mb-3'>Home</li>
-            <li className='mb-3'>Products</li>
-            <li className='mb-3'>Contacts</li>
-            <li className='mb-3'>About</li>
-        </ul>
-    </div>
-    <div className="company text-white mt-5">
-        <ul>
-            <li className='text-xl font-bold mb-3'>About us</li>
-            <li className='mb-3'>Products</li>
-            <li className='mb-3'> Contact</li>
-            <li className='mb-3'>Support</li>
-        </ul>
-    </div>
-    <div className="stay-up mt-5 " >
-        <div className='mb-5'> 
-        <span className='text-xl font-bold mb-3 text-white'>Stay up to date</span>
-
-        </div>
-        <div className='btn-footer'>
-            <input type="text" placeholder='Enter your email' />
-            <button>SUBMIT</button>
-
-        </div>
-    </div>
-    
-    
-    </div>
-    <div className="footer-copyright">
-        <hr />
-        <p>@Copyright 2023</p>
-    </div>
-    </footer>
-    </>
-    
-   
-  )
+    )
 }
 
-export default Footer
+export default Footerne

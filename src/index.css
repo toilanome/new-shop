@@ -23,42 +23,45 @@
   padding: 0;
 
 }
+
 .container {
   margin: 0 auto;
   max-width: 1400px;
-   padding: 24px 20px 0px 0px;
+  padding: 24px 20px 0px 0px;
 
 }
-.padding{
+
+.padding {
   padding: 24px 20px 0px 0px;
 }
-.center{
+
+.center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body{
-  
 
+body {}
 
-}
-.text-color{
-  color: #224F34;
+.text-color {
+  /* color: #224F34; */
   font-size: 18px;
   font-weight: 600;
 }
-.btn-login{
+
+.btn-login {
   border: 1px solid #224F34;
-    background: transparent;
-    width: 100px;
-    height: 44px; 
+  background: transparent;
+  width: 100px;
+  height: 44px;
 }
 
-.h-521{
+.h-521 {
   height: 521px;
 }
+
 .bg-color {
-  background-color: #C2EFD4;
+  background-color: white;
 }
 
 a {

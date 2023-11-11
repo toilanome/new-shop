@@ -1,34 +1,30 @@
 import React from 'react'
-import {FaSistrix} from 'react-icons/fa6'
-import Group from '../Images/Group.svg'
+import logo from '../Images/logo.png'
 const Header = () => {
     return (
-        <header className='bg-color' >
-            
-            <div className='container padding'>
-            
-            <div className='h-11 bg-color flex items-center text-black justify-between'>
-                <h3 className='text-3xl'>Rivo</h3>
-                <div className=''   >
-                    <ul className='flex '>
-                         <li className='mr-9 text-color '>Home</li>
-                        <li className='mr-9 text-color'>Products</li>
-                        <li className='mr-9 text-color'>Contacts</li>
-                        <li className='mr-9 text-color'>About</li>
-                        
+        <header className='mb-10' >
+            <div className='container'>
+                <div className='flex justify-center mb-3'>
+                    <div className='mb-3'>
+                        <img src={logo} alt="" />
+
+                    </div>
+
+
+
+                </div>
+                <hr />
+                <div className='mt-8'>
+                    <ul className='flex justify-center items-center'>
+                        <li className='mr-4 ml-4'><a href="" className='text-black'>HOME</a></li>
+                        <li className='mr-4 ml-4'><a href="/products" className='text-black'>PRODUCTS</a></li>
+                        <li className='mr-4 ml-4'><a href="" className='text-black'>CONTACT</a></li>
+                        <li className='mr-4 ml-4'><a href="" className='text-black'>ABOUT</a></li>
+
                     </ul>
                 </div>
 
-                <div className='flex items-center'>
-                    
-                   <img src={Group} alt="" />
-                    <button className='btn-login text-color center'>Login</button>
-                </div>
-
             </div>
-            </div>
-           
-
         </header>
     )
 }
