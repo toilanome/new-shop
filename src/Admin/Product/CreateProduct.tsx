@@ -3,14 +3,22 @@ import { IProduct } from '../../interface/Product'
 import { ShopcontextMain } from '../../Context/ShopContext'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom';
+import {useMutation,useQueryClient,useQuery} from '@tanstack/react-query'
+import { CreateProducts } from '../api/product';
 
 const CreateProduct = () => {
   const navigate = useNavigate()
   const [inputValue, setInputValue] = useState({})
-  const { addProduct, products } = useContext(ShopcontextMain)
+  const { queryClient, products } = useContext(ShopcontextMain)
   console.log(inputValue);
   console.log("prodcuts", products);
 
+  const mutationCreate = useMutation({
+    mutationFn: (product:IProduct) => CreateProducts(product),
+    onSuccess : () =>{
+      queryClient.invalidateQueries('PRODUCTS')
+    }
+  }) 
 
 
   const onChange = (e: any) => {
@@ -23,7 +31,7 @@ const CreateProduct = () => {
   }
   const onSubmit = (e: any) => {
     e.preventDefault()
-    addProduct(inputValue)
+    mutationCreate.mutate(inputValue as any)
     navigate('/admin')
     console.log("data");
     toast.success("Thêm sản phẩm thành công rồi =)))")

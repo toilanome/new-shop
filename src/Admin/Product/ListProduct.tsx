@@ -1,10 +1,19 @@
 import React, { useContext } from 'react'
 import { ShopcontextMain } from '../../Context/ShopContext'
 import { Link } from 'react-router-dom'
+import {useMutation, useQueryClient} from '@tanstack/react-query'
+
 
 const ListProduct = () => {
-    const { products, deleteProduct } = useContext(ShopcontextMain)
-
+    const { products, mutationDelete, isLoading, isError } = useContext(ShopcontextMain)
+    console.log('products', products);
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+    
+    if (isError) {
+        return <div>Error loading products</div>;
+    }
     return (
         <div className='flex items-center justify-center min-h-screen'>
             <div className='p-5'>
@@ -29,7 +38,7 @@ const ListProduct = () => {
                         </tr>
                     </thead>
                     <tbody >
-                        {products.map((item: any, index: number) => (
+                        {products.data.map((item: any, index: number) => (
                             <tr key={index} className=' border-b border-b-gray-400'>
                                 <td className='p-3'>{index + 1}</td>
                                 <td className='p-3'>{item.name}</td>
@@ -40,8 +49,8 @@ const ListProduct = () => {
                                 <td className='p-3'>{item.category}</td>
                                 <td className='p-3'>{item.description}</td>
                                 <td className='p-3'>
-                                    <button onClick={() => deleteProduct(item.id)} className='bg-red-600 text-white mr-2'>Delete</button>
-                                    <Link to={`/admin/edit-product/${item.id}`}>
+                                    <button onClick={() => mutationDelete.mutate(item._id)} className='bg-red-600 text-white mr-2'>Delete</button>
+                                    <Link to={`/admin/product-edit/edit/${item._id}`}>
                                         <button className='bg-cyan-500 text-white'>Edit</button>
                                     </Link>
                                 </td>

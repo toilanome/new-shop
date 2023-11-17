@@ -16,10 +16,11 @@ const Header = () => {
                 <hr />
                 <div className='mt-8'>
                     <ul className='flex justify-center items-center'>
-                        <li className='mr-4 ml-4'><a href="" className='text-black'>HOME</a></li>
+                        <li className='mr-4 ml-4'><a href="/" className='text-black'>HOME</a></li>
                         <li className='mr-4 ml-4'><a href="/products" className='text-black'>PRODUCTS</a></li>
                         <li className='mr-4 ml-4'><a href="" className='text-black'>CONTACT</a></li>
                         <li className='mr-4 ml-4'><a href="" className='text-black'>ABOUT</a></li>
+                        <li className='mr-4 ml-4'><a href="/admin/signin" className='text-black'>LOGIN</a></li>
 
                     </ul>
                 </div>

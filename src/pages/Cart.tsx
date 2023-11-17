@@ -1,5 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import ShopContext, { ShopcontextMain } from '../Context/ShopContext'
 const Cart = () => {
+
+    const {getTotalProduct, cartItems,addToCart, removeCart,cart,  products} = useContext(ShopcontextMain)
+
+console.log('check cart', cart);
+
     return (
         <div>
             <div className='container'>
@@ -13,78 +19,60 @@ const Cart = () => {
                                     Product name
                                 </th>
                                 <th scope="col" className="px-6 py-3">
-                                    Color
-                                </th>
-                                <th scope="col" className="px-6 py-3">
-                                    Category
+                                    Image
                                 </th>
                                 <th scope="col" className="px-6 py-3">
                                     Price
                                 </th>
                                 <th scope="col" className="px-6 py-3">
-                                    <span className="sr-only">Edit</span>
+                                    Category
                                 </th>
+                                <th scope="col" className="px-6 py-3">
+                                    Description
+                                </th>
+                                <th scope="col" className="px-6 py-3">
+                                    Action
+                                </th>
+                               
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Apple MacBook Pro 17"
-                                </th>
-                                <td className="px-6 py-4">
-                                    Silver
-                                </td>
-                                <td className="px-6 py-4">
-                                    Laptop
-                                </td>
-                                <td className="px-6 py-4">
-                                    $2999
-                                </td>
-                                <td className="px-6 py-4 text-right">
-                                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                            </tr>
-                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Microsoft Surface Pro
-                                </th>
-                                <td className="px-6 py-4">
-                                    White
-                                </td>
-                                <td className="px-6 py-4">
-                                    Laptop PC
-                                </td>
-                                <td className="px-6 py-4">
-                                    $1999
-                                </td>
-                                <td className="px-6 py-4 text-right">
-                                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                            </tr>
-                            <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Magic Mouse 2
-                                </th>
-                                <td className="px-6 py-4">
-                                    Black
-                                </td>
-                                <td className="px-6 py-4">
-                                    Accessories
-                                </td>
-                                <td className="px-6 py-4">
-                                    $99
-                                </td>
-                                <td className="px-6 py-4 text-right">
-                                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                            </tr>
+                            {cart.map((e:any) => (
+                                <tr key={e._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {e.name}
+                                    </th>
+                                    <td className="px-6 py-4">
+                                        <img src={e.image} alt="" />
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {e.price}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                    {e.category}
+                                        
+                                    </td>
+                                    <td className="px-6 py-4">
+                                    {e.description}
+                                        
+                                    </td>
+                                    <td className="px-6 py-4 text-right">
+                                        <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+                                    </td>
+                                </tr>
+                            ))}
+                                    
+                                
+                        
+                            
+                           
                         </tbody>
                     </table>
                 </div>
 
-                <div className='flex justify-between  mt-32 '>
+                <div className='flex justify-between  mt-24 '>
                     <div>
-                        <span>  </span> <a href="/products" className='text-black pb-1 inline-block'>Home </a>
+                        {/* <span>  </span> <a href="/products" className='text-black pb-1 inline-block'><i className="fa-solid fa-house"></i> </a> */}
                     </div>
                     <div className='text-right'>
                         <span className='mr-5'>Subtotal</span>

@@ -14,6 +14,7 @@ import Products from './pages/Products';
 import Footerne from './pages/Footer';
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
+import HomePage from './pages/HomePage';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,16 +25,22 @@ function App() {
 
 
       <Router>
-        <Header />
+        {/* <Header /> */}
 
         <Routes>
-          <Route path='/' element={<PageLayout />} />
-          <Route path='/products' element={<Products />} />
-          <Route path='/product' element={<ProductDetail />} />
-          <Route path='/cart' element={<Cart />} />
+          <Route path='/' element={<PageLayout />}   >
+            <Route index path='/' element={<HomePage />}  />
+              <Route path='/cart' element={<Cart />} />
+              <Route path="/products/" element={<Products />} />
+              <Route path="/products/:id" element={<ProductDetail />} />
+
+          </Route>
+          
+          
           <Route path='/admin/*' element={<AdminLayout />} />
         </Routes>
-        <Footerne />
+
+        {/* <Footerne /> */}
       </Router>
 
 
